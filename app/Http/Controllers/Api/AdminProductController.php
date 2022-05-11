@@ -34,6 +34,7 @@ class AdminProductController extends Controller
 			'sub_category_id' => 'required',
 			'name' => 'required',
 			'unit_price' => 'required',
+			'sale_price' => 'required',
 			'rate' => 'required',
 			'vendor' => 'required',
 			'sku' => 'required',
@@ -46,6 +47,7 @@ class AdminProductController extends Controller
 			'sub_category_id.required' => 'Please select a sub-category',
 			'name.required' => 'Please enter a name',
 			'unit_price.required' => 'Please enter an unit price',
+			'sale_price.required' => 'Please enter a sale price',
 			'rate.required' => 'Please enter a rate',
 			'vendor.required' => 'Please enter a vendor',
 			'sku.required' => 'Please enter an SKU',
@@ -112,9 +114,10 @@ class AdminProductController extends Controller
 	public function update(Request $request, $id)
 	{
 		$validator = Validator::make($request->all(), [
-			'subCategory' => 'required',
+			'sub_category_id' => 'required',
 			'name' => 'required',
-			'unitPrice' => 'required',
+			'unit_price' => 'required',
+			'sale_price' => 'required',
 			'rate' => 'required',
 			'vendor' => 'required',
 			'sku' => 'required',
@@ -124,9 +127,10 @@ class AdminProductController extends Controller
 			'size' => 'required',
 			'image' => 'image'
 		], [
-			'subCategory.required' => 'Please select a sub-category',
+			'sub_category_id.required' => 'Please select a sub-category',
 			'name.required' => 'Please enter a name',
-			'unitPrice.required' => 'Please enter an unit price',
+			'unit_price.required' => 'Please enter an unit price',
+			'sale_price.required' => 'Please enter a sale price',
 			'rate.required' => 'Please enter a rate',
 			'vendor.required' => 'Please enter a vendor',
 			'sku.required' => 'Please enter an SKU',
@@ -144,11 +148,11 @@ class AdminProductController extends Controller
 			]);
 		} else {
 			$product = Product::find($id);
-			$product->sub_category_id = $request->subCategory;
+			$product->sub_category_id = $request->sub_category_id;
 			$product->name = $request->name;
 			$product->unsigned_name = Str::slug($product->name, '-');
-			$product->unit_price = $request->unitPrice;
-			$product->sale_price = $request->salePrice;
+			$product->unit_price = $request->unit_price;
+			$product->sale_price = $request->sale_price;
 			$product->rate = $request->rate;
 			$product->vendor = $request->vendor;
 			$product->sku = $request->sku;

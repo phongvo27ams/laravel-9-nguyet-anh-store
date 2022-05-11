@@ -18,7 +18,7 @@ return new class extends Migration
 			$table->unsignedBigInteger('sub_category_id');
 			$table->string('unsigned_name');
 			$table->float('unit_price', 8, 2);
-			$table->float('sale_price', 8, 2)->nullable();
+			$table->float('sale_price', 8, 2);
 			$table->integer('rate');
 			$table->string('vendor');
 			$table->integer('sku');

@@ -25,5 +25,7 @@ Route::delete('/admin/sub-category/{id}', [AdminSubCategoryController::class, 'd
 Route::get('/admin/product', [AdminProductController::class, 'index']);
 Route::get('/admin/product/create', [AdminProductController::class, 'create']);
 Route::post('/admin/product', [AdminProductController::class, 'store']);
+Route::get('/admin/product/{id}/edit', [AdminProductController::class, 'edit']);
+Route::post('/admin/product/{id}', [AdminProductController::class, 'update']);
 Route::delete('/admin/product/{id}', [AdminProductController::class, 'destroy']);
 ?>
