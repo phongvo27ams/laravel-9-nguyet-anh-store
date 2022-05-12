@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\Api\AdminCategoryController;
+use App\Http\Controllers\Api\AdminNewsController;
 use App\Http\Controllers\Api\AdminProductController;
 use App\Http\Controllers\Api\AdminSubCategoryController;
 use Illuminate\Http\Request;
@@ -28,4 +29,7 @@ Route::post('/admin/product', [AdminProductController::class, 'store']);
 Route::get('/admin/product/{id}/edit', [AdminProductController::class, 'edit']);
 Route::post('/admin/product/{id}', [AdminProductController::class, 'update']);
 Route::delete('/admin/product/{id}', [AdminProductController::class, 'destroy']);
+
+Route::get('/admin/news', [AdminNewsController::class, 'index']);
+Route::delete('/admin/news/{id}', [AdminNewsController::class, 'destroy']);
 ?>
