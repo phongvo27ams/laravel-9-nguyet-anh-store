@@ -31,5 +31,8 @@ Route::post('/admin/product/{id}', [AdminProductController::class, 'update']);
 Route::delete('/admin/product/{id}', [AdminProductController::class, 'destroy']);
 
 Route::get('/admin/news', [AdminNewsController::class, 'index']);
+Route::post('/admin/news', [AdminNewsController::class, 'store']);
+Route::get('/admin/news/{id}/edit', [AdminNewsController::class, 'edit']);
+Route::post('/admin/news/{id}', [AdminNewsController::class, 'update']);
 Route::delete('/admin/news/{id}', [AdminNewsController::class, 'destroy']);
 ?>

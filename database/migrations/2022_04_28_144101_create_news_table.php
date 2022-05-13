@@ -15,8 +15,9 @@ return new class extends Migration
 		Schema::create('news', function (Blueprint $table) {
 			$table->id();
 			$table->string('title');
+			$table->string('unsigned_title');
 			$table->unsignedBigInteger('user_id');
-			$table->string('brief');
+			$table->text('brief');
 			$table->text('content');
 			$table->string('image');
 			$table->timestamps();
